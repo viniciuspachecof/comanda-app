@@ -18,10 +18,6 @@ export class ComandaService {
     return this.httpClient.get<Comanda[]>(this.URI);
   };
 
-  excluir(comanda: Comanda) {
-    return this.httpClient.delete(`${this.URI}/${comanda.id}`);
-  };
-
   private adicionar(comanda: Comanda) {
     return this.httpClient.post(this.URI, comanda);
   };

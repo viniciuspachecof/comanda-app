@@ -6,6 +6,7 @@ import { BusyLoaderService } from 'src/app/services/busy-loader.service';
 import { Comanda } from 'src/app/models/comanda.interface';
 import { ComandaService } from 'src/app/services/comanda.service';
 import { ActivatedRoute } from '@angular/router';
+import { ComandaProduto } from 'src/app/models/comandasprodutos';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,6 +17,7 @@ export class CadastroPage implements OnInit {
 
   comanda: Comanda;
   produtos: Produto[];
+  comandasprodutos: ComandaProduto[];
 
   constructor(
     private alertController: AlertController,
@@ -28,7 +30,7 @@ export class CadastroPage implements OnInit {
   ) {
     this.comanda = {
       numero: null,
-      produtos: [],
+      comandasprodutos: [],
       qtde: 1
     };
   };
@@ -59,6 +61,12 @@ export class CadastroPage implements OnInit {
   };
 
   async salvar() {
+    var dadosProdutos = this.comanda.comandasprodutos;
+    var idcomanda = this.comanda.id;
+    var dto = [];
+    dadosProdutos.forEach(item => dto.push({'produtoId': item['id'], 'comandaId': idcomanda}));
+    this.comanda.comandasprodutos = dto;
+
     let loading = await this.loadingController.create({ message: 'Salvando' });
     loading.present();
 

@@ -28,7 +28,7 @@
         </ion-text>
       </ion-item>
       <ion-item>
-        <ion-select placeholder="Selecione os produtos" [(ngModel)]="comanda.produtos" multiple="true" [compareWith]="compareWith" name="produto" required #campoProduto="ngModel">
+        <ion-select placeholder="Selecione os produtos" [(ngModel)]="comanda.comandasprodutos" multiple="true" [compareWith]="compareWith" name="produto" required #campoProduto="ngModel">
           <ion-select-option *ngFor="let produto of produtos" [value]="produto">
             {{produto.nome}}
           </ion-select-option>

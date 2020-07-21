@@ -36,35 +36,6 @@ export class ComandasPage implements OnInit {
     });
   }
 
-  async confirmarExclusao(comanda: Comanda) {
-    let alerta = await this.alertController.create({
-      header: 'Confirmação de exclusão',
-      message: `Deseja excluir a comanda ${comanda.numero}?`,
-      buttons: [{
-        text: 'SIM',
-        handler: () => {
-          this.excluir(comanda);
-        }
-      }, {
-        text: 'NÃO'
-      }]
-    });
-    alerta.present();
-  }
-
-  private async excluir(comanda: Comanda) {
-    const busyLoader = await this.loadingController.create({ message: 'Excluíndo...' });
-    busyLoader.present();
-
-    this.comandaService.excluir(comanda).subscribe(() => {
-      this.listar()
-      busyLoader.dismiss();
-    }, () => {
-      busyLoader.dismiss();
-      this.mensagemAlerta();
-    });
-  };
-
   async mensagemAlerta() {
     const alerta = await this.alertController.create({
       cssClass: 'my-custom-class',
