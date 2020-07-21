@@ -61,14 +61,10 @@ export class CadastroPage implements OnInit {
   };
 
   async salvar() {
-    var dadosProdutos = this.comanda.comandasprodutos;
-    var idcomanda = this.comanda.id;
-    var dto = [];
-    dadosProdutos.forEach(item => dto.push({'produtoId': item['id'], 'comandaId': idcomanda}));
-    this.comanda.comandasprodutos = dto;
-
     let loading = await this.loadingController.create({ message: 'Salvando' });
     loading.present();
+
+    this.setComandasProdutos();
 
     this.comandaService
       .salvar(this.comanda)
@@ -81,6 +77,14 @@ export class CadastroPage implements OnInit {
       });
   };
 
+  setComandasProdutos() {
+    var getProdutos = this.comanda.comandasprodutos;
+    var getIdComanda = this.comanda.id;
+    var dto = [];
+    getProdutos.forEach(item => dto.push({ 'produtoId': item['id'], 'comandaId': getIdComanda }));
+    this.comanda.comandasprodutos = dto;
+  };
+
   async mensagemAlerta() {
     const alerta = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -90,5 +94,5 @@ export class CadastroPage implements OnInit {
     });
 
     await alerta.present();
-  }; 
+  };
 };

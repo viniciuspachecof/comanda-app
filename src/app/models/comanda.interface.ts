@@ -1,4 +1,3 @@
-import { Produto } from './produto.interface';
 import { ComandaProduto } from './comandasprodutos';
 
 export interface Comanda {
