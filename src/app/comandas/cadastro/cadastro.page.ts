@@ -78,10 +78,12 @@ export class CadastroPage implements OnInit {
   };
 
   setComandasProdutos() {
-    var getProdutos = this.comanda.comandasprodutos;
-    var getIdComanda = this.comanda.id;
-    var dto = [];
+    var getProdutos = this.comanda.comandasprodutos,
+      getIdComanda = this.comanda.id,
+      dto = [];
+
     getProdutos.forEach(item => dto.push({ 'produtoId': item['id'], 'comandaId': getIdComanda }));
+    
     this.comanda.comandasprodutos = dto;
   };
 
