@@ -5,4 +5,5 @@ export interface Comanda {
     numero_comanda: number;
     comandasprodutos: ComandaProduto[];
     quantidade: number;
+    situacao: string
 };

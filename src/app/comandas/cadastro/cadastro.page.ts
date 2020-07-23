@@ -31,7 +31,8 @@ export class CadastroPage implements OnInit {
     this.comanda = {
       numero_comanda: null,
       comandasprodutos: [],
-      quantidade: 1
+      quantidade: 1,
+      situacao: 'A'
     };
   };
 
