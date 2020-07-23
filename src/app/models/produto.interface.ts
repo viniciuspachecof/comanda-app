@@ -3,8 +3,7 @@ import { Categoria } from './categoria.interface';
 
 export interface Produto {
     id?: number;
-    nome: string;
-    valor: number;
-    observacao: string;
+    prod_nome: string;
+    prod_preco: number;
     categoria: Categoria[];
 };

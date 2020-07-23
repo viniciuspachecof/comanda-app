@@ -2,7 +2,7 @@ import { ComandaProduto } from './comandasprodutos';
 
 export interface Comanda {
     id?: number;
-    numero: number;
+    numero_comanda: number;
     comandasprodutos: ComandaProduto[];
-    qtde: number;
+    quantidade: number;
 };

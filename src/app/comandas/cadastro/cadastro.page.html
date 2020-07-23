@@ -14,7 +14,7 @@
     </div>
     <form #comandaForm="ngForm" novalidate>
       <ion-item>
-        <ion-input type="text" placeholder="Número" name="numero" [(ngModel)]="comanda.numero" required pattern="[0-99999999 ]+" #campoNumero="ngModel">
+        <ion-input type="text" placeholder="Número" name="numero_comanda" [(ngModel)]="comanda.numero_comanda" required pattern="[0-99999999 ]+" #campoNumero="ngModel">
         </ion-input>
         <ion-text color="danger" *ngIf="campoNumero.invalid && (campoNumero.dirty || campoNumero.touched)">
           <small>
@@ -30,7 +30,7 @@
       <ion-item>
         <ion-select placeholder="Selecione os produtos" [(ngModel)]="comanda.comandasprodutos" multiple="true" [compareWith]="compareWith" name="produto" required #campoProduto="ngModel">
           <ion-select-option *ngFor="let produto of produtos" [value]="produto">
-            {{produto.nome}}
+            {{produto.prod_nome}}
           </ion-select-option>
         </ion-select>
         <ion-text color="danger" *ngIf="campoProduto.invalid && (campoProduto.dirty || campoProduto.touched)">
@@ -42,7 +42,7 @@
         </ion-text>
       </ion-item>
       <ion-item>
-        <ion-input type="text" placeholder="Quantidade" name="qtde" [(ngModel)]="comanda.qtde" required pattern="[0-99999999 ]+" #campoQtde="ngModel">
+        <ion-input type="text" placeholder="Quantidade" name="quantidade" [(ngModel)]="comanda.quantidade" required pattern="[0-99999999 ]+" #campoQtde="ngModel">
         </ion-input>
         <ion-text color="danger" *ngIf="campoQtde.invalid && (campoQtde.dirty || campoQtde.touched)">
           <small>

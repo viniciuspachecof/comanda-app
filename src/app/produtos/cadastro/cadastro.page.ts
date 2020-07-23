@@ -27,9 +27,8 @@ export class CadastroPage implements OnInit {
     private loadingController: LoadingController
   ) {
     this.produto = {
-      nome: '',
-      valor: null,
-      observacao: '',
+      prod_nome: '',
+      prod_preco: null,
       categoria: []
     };
   };

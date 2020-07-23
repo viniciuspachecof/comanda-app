@@ -14,7 +14,7 @@
     </div>
     <form #produtoForm="ngForm" novalidate>
       <ion-item>
-        <ion-input type="text" disabled="true" placeholder="Nome" name="nome" [(ngModel)]="produto.nome">
+        <ion-input type="text" disabled="true" placeholder="Nome" name="prod_nome" [(ngModel)]="produto.prod_nome">
         </ion-input>
       </ion-item>
 
@@ -28,13 +28,7 @@
       </ion-item>
 
       <ion-item>
-        <ion-input type="number" disabled="true" placeholder="Valor unitário" name="valor" [(ngModel)]="produto.valor">
-        </ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input type="text" disabled="true" placeholder="Observação" name="observacao"
-          [(ngModel)]="produto.observacao">
+        <ion-input type="number" disabled="true" placeholder="Valor unitário" name="prod_preco" [(ngModel)]="produto.prod_preco">
         </ion-input>
       </ion-item>
     </form>

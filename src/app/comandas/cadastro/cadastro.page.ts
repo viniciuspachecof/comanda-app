@@ -29,9 +29,9 @@ export class CadastroPage implements OnInit {
     private loadingController: LoadingController
   ) {
     this.comanda = {
-      numero: null,
+      numero_comanda: null,
       comandasprodutos: [],
-      qtde: 1
+      quantidade: 1
     };
   };
 
